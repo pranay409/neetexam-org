@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://neetexam.org/sitemap.xml
