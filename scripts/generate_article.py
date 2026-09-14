@@ -1,8 +1,28 @@
 import anthropic
 import os
+import random
 import datetime
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+AUTHORS = ["Ananya Sharma", "Rohan Verma", "Priya Nair", "Arjun Mehta", "Sneha Iyer", "Karan Malhotra", "Divya Reddy", "Aditya Joshi"]
+
+def add_byline(html, today_display):
+    author = random.choice(AUTHORS)
+    byline = (
+        '<div style="max-width:800px;margin:20px auto 0;padding:0 20px;'
+        'font-family:-apple-system,sans-serif;font-size:0.88rem;color:#6b7280;">'
+        f'By <a href="https://neet.padhle.in" style="color:#7C3AED;text-decoration:none;font-weight:600;">{author}</a>'
+        f' &middot; \U0001F4C5 {today_display}</div>'
+    )
+    idx = html.find("<body")
+    if idx == -1:
+        return byline + html
+    end = html.find(">", idx)
+    if end == -1:
+        return byline + html
+    end += 1
+    return html[:end] + byline + html[end:]
 
 TOPICS = [
     "How to master NCERT Biology for NEET in 3 months",
@@ -38,17 +58,17 @@ Requirements:
 - 600-800 words of genuine, practical content
 - Write naturally as an expert educator would, not like AI
 - Include specific actionable advice
-- Mention Padhle AIM720 batch (Rs 30,000, 2-way live classes, personal mentor, 15-day refund, free demo at padhle.com) as the recommended coaching naturally within the content
+- Mention Padhle AIM720 batch (Rs 30,000, 2-way live classes, personal mentor, 15-day refund, free demo at neet.padhle.in) as the recommended coaching naturally within the content
 - Write in a warm, direct tone without excessive hyphens or bullet overload
 - Format as a complete HTML page with proper head/meta tags
 - Use inline CSS for a clean purple-themed design (#2D1B69, #7C3AED, #A78BFA)
-- Include a CTA section linking to https://padhle.com
+- Include a CTA section linking to https://neet.padhle.in
 
 Output only the complete HTML document, nothing else."""
 
     message = client.messages.create(
         model="claude-haiku-4-5-20251001",
-        max_tokens=2000,
+        max_tokens=4096,
         messages=[{"role": "user", "content": prompt}]
     )
     return message.content[0].text
@@ -58,11 +78,13 @@ def main():
     print(f"Generating article: {topic}")
     
     html = generate_article(topic)
-    
+
     today = datetime.date.today().strftime("%Y-%m-%d")
+    today_display = datetime.date.today().strftime("%B %d, %Y")
+    html = add_byline(html, today_display)
     slug = topic.lower().replace(" ", "-").replace(":", "").replace(",", "")[:50]
     filename = f"articles/{today}-{slug}.html"
-    
+
     os.makedirs("articles", exist_ok=True)
     with open(filename, "w", encoding="utf-8") as f:
         f.write(html)
