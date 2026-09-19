@@ -1,7 +1,14 @@
 import anthropic
 import os
+import sys
 import random
 import datetime
+
+sys.path.insert(0, os.path.dirname(__file__))
+import seo_utils as su
+
+DOMAIN = "neetexam.org"
+SITE_NAME = "NEETExam"
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
@@ -86,10 +93,22 @@ def main():
     filename = f"articles/{today}-{slug}.html"
 
     os.makedirs("articles", exist_ok=True)
+
+    url = f"https://{DOMAIN}/{filename}"
+    description = su.extract_description(html, topic)
+    category = su.guess_category(topic)
+
+    tagged_html = su.publish_article(
+        article_html=html, site_name=SITE_NAME, domain=DOMAIN,
+        canonical_url=url, title=topic, description=description,
+        date_iso=today, category=category,
+    )
+
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(html)
-    
+        f.write(tagged_html)
+
     print(f"Article saved: {filename}")
+    print("SEO tags injected, manifest/sitemap/homepage/archive rebuilt")
 
 if __name__ == "__main__":
     main()
