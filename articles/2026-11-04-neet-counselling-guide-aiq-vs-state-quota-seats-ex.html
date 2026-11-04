@@ -1,0 +1,359 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete guide to NEET counselling - understand AIQ vs state quota seats and make informed choices for your medical career.">
+    <title>NEET Counselling Guide: AIQ vs State Quota Seats Explained</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f3ff 0%, #faf8ff 100%);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2D1B69 0%, #7C3AED 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(45, 27, 105, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08);
+            border-left: 5px solid #7C3AED;
+        }
+        
+        .content-section h2 {
+            color: #2D1B69;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .content-section h3 {
+            color: #7C3AED;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .content-section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f3e8ff 0%, #ede9fe 100%);
+            border-left: 4px solid #7C3AED;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        
+        .highlight-box strong {
+            color: #2D1B69;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #2D1B69 0%, #7C3AED 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e9d5ff;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #faf8ff;
+        }
+        
+        .tips-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .tips-list li {
+            margin: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .tips-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #7C3AED;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .coaching-box {
+            background: linear-gradient(135deg, #7C3AED 0%, #a78bfa 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+        }
+        
+        .coaching-box h3 {
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .coaching-box p {
+            margin-bottom: 0.8rem;
+            opacity: 0.98;
+        }
+        
+        .coaching-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+        
+        .coaching-box li {
+            margin: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .coaching-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #2D1B69 0%, #7C3AED 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 6px 20px rgba(45, 27, 105, 0.2);
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #7C3AED;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+    </style>
+<link rel="canonical" href="https://neetexam.org/articles/2026-11-04-neet-counselling-guide-aiq-vs-state-quota-seats-ex.html">
+<meta property="og:title" content="NEET counselling guide: AIQ vs state quota seats explained">
+<meta property="og:description" content="Complete guide to NEET counselling - understand AIQ vs state quota seats and make informed choices for your medical career.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://neetexam.org/articles/2026-11-04-neet-counselling-guide-aiq-vs-state-quota-seats-ex.html">
+<meta property="og:site_name" content="NEETExam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NEET counselling guide: AIQ vs state quota seats explained">
+<meta name="twitter:description" content="Complete guide to NEET counselling - understand AIQ vs state quota seats and make informed choices for your medical career.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "NEET counselling guide: AIQ vs state quota seats explained", "description": "Complete guide to NEET counselling - understand AIQ vs state quota seats and make informed choices for your medical career.", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "author": {"@type": "Organization", "name": "NEETExam"}, "publisher": {"@type": "Organization", "name": "NEETExam"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://neetexam.org/articles/2026-11-04-neet-counselling-guide-aiq-vs-state-quota-seats-ex.html"}, "articleSection": "Counselling"}</script>
+</head>
+<body><div style="max-width:800px;margin:20px auto 0;padding:0 20px;font-family:-apple-system,sans-serif;font-size:0.88rem;color:#6b7280;">By <a href="https://neet.padhle.in" style="color:#7C3AED;text-decoration:none;font-weight:600;">Priya Nair</a> &middot; 📅 November 04, 2026</div>
+    <header>
+        <h1>NEET Counselling Guide</h1>
+        <p>Understanding AIQ vs State Quota Seats: Your Path to Medical College</p>
+    </header>
+    
+    <div class="container">
+        <div class="content-section">
+            <h2>Understanding the Basics</h2>
+            <p>After scoring well in NEET, one of the most important decisions you'll make is choosing between All India Quota (AIQ) seats and state quota seats during counselling. This choice can significantly impact which college you get admission to and your entire medical career trajectory. I've seen countless students make uninformed decisions here, and I want to help you avoid that mistake.</p>
+            <p>The truth is, there's no one-size-fits-all answer. Your decision should depend on your rank, preferences, and long-term goals. Let me break down both options for you.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>AIQ Seats: The Bigger Playing Field</h2>
+            <h3>What are AIQ seats?</h3>
+            <p>All India Quota seats make up 15% of the total MBBS seats in government medical colleges across India. These seats are filled through a centralized counselling process conducted by MCC (Medical Counselling Committee). The biggest advantage here is that you can choose any medical college in any state in India, provided your all-India rank qualifies for that college.</p>
+            
+            <h3>Why AIQ matters</h3>
+            <p>If you've secured a strong all-India rank, AIQ gives you access to prestigious institutions across the country. You're not limited by your state's competitive environment. Someone from Bihar with a rank of 500 can get admission to a top college in Delhi or Maharashtra if it matches their rank. This mobility is something many students overlook but shouldn't.</p>
+            
+            <div class="highlight-box">
+                <strong>Key Point:</strong> AIQ seats are highly competitive because everyone with a good all-India rank is competing for the same pool of seats. Your rank matters more than your state domicile.
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>State Quota Seats: The Home Advantage</h2>
+            <h3>How state quotas work</h3>
+            <p>State quota seats constitute 85% of the total MBBS seats in government medical colleges. These are filled through state-level counselling processes, and typically, only candidates domiciled in that state can apply. The counselling process and merit lists are managed by individual states, and rules can vary significantly from one state to another.</p>
+            
+            <h3>The strategic advantage</h3>
+            <p>Here's where it gets interesting: even if your all-India rank isn't exceptional, your state rank might be much better. I've seen students with all-India ranks around 5,000 securing excellent colleges through state quota because their state rank was 200. The competition pool for state seats is much smaller, making it easier to secure a good college if you're a top performer within your state.</p>
+            
+            <div class="highlight-box">
+                <strong>Real Talk:</strong> If you're a state topper but your all-India rank isn't in the top 1,000-2,000, state quota almost always gives you better college options. Don't ignore this advantage.
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>AIQ vs State Quota: Direct Comparison</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Factor</th>
+                    <th>AIQ Seats</th>
+                    <th>State Quota Seats</th>
+                </tr>
+                <tr>
+                    <td>Competition</td>
+                    <td>All India level (very high)</td>
+                    <td>State level (relatively lower)</td>
+                </tr>
+                <tr>
+                    <td>Merit Criteria</td>
+                    <td>All India rank</td>
+                    <td>State rank</td>
+                </tr>
+                <tr>
+                    <td>College Options</td>
+                    <td>Any college across India</td>
+                    <td>Colleges within your state</td>
+                </tr>
+                <tr>
+                    <td>Counselling Process</td>
+                    <td>Centralized (MCC)</td>
+                    <td>State-specific (varies)</td>
+                </tr>
+                <tr>
+                    <td>Flexibility</td>
+                    <td>High mobility, change states</td>
+                    <td>Limited to state, but predictable</td>
+                </tr>
+                <tr>
+                    <td>Best For</td>
+                    <td>Top 1500-2000 ranks</td>
+                    <td>State toppers, ranks 500-5000</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="content-section">
+            <h2>Making Your Decision: Practical Advice</h2>
+            <h3>If your all-India rank is in the top 1,500</h3>
+            <p>You should definitely prioritize AIQ seats. At this rank level, you'll get access to premier institutions like AIIMS, top government medical colleges in metro cities, and other highly reputed colleges. The prestige and resources at these institutions are unmatched. AIQ is your gateway to the best opportunities in medical education.</p>
+            
+            <h3>If your all-India rank is between 1,500 and 5,000</h3>
+            <p>This is where you need to be strategic. Check your state rank. If you're in the top 100-200 in your state, state quota will likely give you better colleges. Compare the colleges you'd get through both routes and decide based on the institution's reputation, infrastructure, and location preferences.</p>
+            
+            <h3>If your all-India rank is beyond 5,000</h3>
+            <p>State quota is almost always your better option. At this rank, AIQ seats would likely give you colleges that are not as prestigious as what you'd get through state quota if you're a state topper. Focus on state counselling and securing a good college within your state.</p>
+            
+            <ul class="tips-list">
+                <li>Always check previous years' cutoffs for both AIQ and state quota before counselling</li>
+                <li>Understand your state's specific counselling process and important dates</li>
+                <li>Research colleges thoroughly, not just by rank, but by faculty, facilities, and placement records</li>
+                <li>Don't get swayed by others' choices; your rank and circumstances are unique</li>
+                <li>Consider location if you have strong personal or family reasons to stay in or leave your state</li>
+            </ul>
+        </div>
+        
+        <div class="coaching-box">
+            <h3>Expert Guidance Makes All the Difference</h3>
+            <p>Navigating NEET counselling is complex, and having proper guidance during your preparation phase helps tremendously. At <strong>Padhle AIM720</strong>, we don't just prepare you for the exam; we guide you through every step of your NEET journey, including counselling strategy.</p>
+            <p>Our program is designed specifically for serious NEET aspirants who want personalized attention and genuine results.</p>
+            <ul>
+                <li>2-way live classes with experienced faculty who've guided thousands of students</li>
+                <li>Personal mentor who understands your specific situation and goals</li>
+                <li>Comprehensive NEET preparation at just Rs 30,000 (highly affordable)</li>
+                <li>15-day refund policy if you're not satisfied</li>
+                <li>Free demo class to experience our teaching methodology</li>
+            </ul>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem;">When you prepare with the right guidance, counselling decisions become clearer because you understand your capabilities better. Visit <strong>neet.padhle.in</strong> to sign up for a free demo class today.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2>Common Mistakes to Avoid</h2>
+            <p>Over the years, I've noticed several patterns in how students make these decisions. Let me highlight the mistakes I see most often:</p>
+            <ul class="tips-list">
+                <li>Choosing AIQ and getting a poor college just for the sake of "all-India" status instead of taking state quota with a better college</li>
+                <li>Not researching state-specific rules and missing important counselling dates</li>
+                <li>Letting peer pressure influence their decision instead of analyzing their
