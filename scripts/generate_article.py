@@ -6,6 +6,7 @@ import datetime
 
 sys.path.insert(0, os.path.dirname(__file__))
 import seo_utils as su
+import topic_picker
 
 DOMAIN = "neetexam.org"
 SITE_NAME = "NEETExam"
@@ -55,8 +56,7 @@ TOPICS = [
 ]
 
 def get_topic():
-    day = datetime.date.today().timetuple().tm_yday
-    return TOPICS[day % len(TOPICS)]
+    return topic_picker.pick_topic(TOPICS, SITE_NAME, DOMAIN)
 
 def generate_article(topic):
     prompt = f"""Write a detailed, helpful article for NEET aspirants about: {topic}
