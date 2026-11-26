@@ -7,6 +7,7 @@ import datetime
 sys.path.insert(0, os.path.dirname(__file__))
 import seo_utils as su
 import topic_picker
+import article_guard
 
 DOMAIN = "neetexam.org"
 SITE_NAME = "NEETExam"
@@ -73,7 +74,7 @@ Requirements:
 
 Output only the complete HTML document, nothing else."""
 
-    message = client.messages.create(
+    message = article_guard.create(client, 
         model="claude-haiku-4-5-20251001",
         max_tokens=4096,
         messages=[{"role": "user", "content": prompt}]
