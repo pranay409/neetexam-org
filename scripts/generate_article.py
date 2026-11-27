@@ -1,3 +1,4 @@
+import re
 import anthropic
 import os
 import sys
@@ -90,7 +91,7 @@ def main():
     today = datetime.date.today().strftime("%Y-%m-%d")
     today_display = datetime.date.today().strftime("%B %d, %Y")
     html = add_byline(html, today_display)
-    slug = topic.lower().replace(" ", "-").replace(":", "").replace(",", "")[:50]
+    slug = re.sub(r"[^a-z0-9]+", "-", topic.lower()).strip("-")[:50].strip("-")
     filename = f"articles/{today}-{slug}.html"
 
     os.makedirs("articles", exist_ok=True)
